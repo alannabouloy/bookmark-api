@@ -16,12 +16,12 @@ The API will require a Bearer Token which you can set on your personal machine.
 
 POST requests should be formatted in json with the expected data formatted as follows:
 
-{
-    "title" : "required string of at least 1 character",
-    "url" : "required string of at least 5 characters which includes an http protocol",
-    "desc" : "optional, but if included, must be a string of at least 1 character",
-    "rating" : "optional, but if included, must be a number between 1 and 5"
-}
+{ \n
+    "title" : "required string of at least 1 character", \n
+    "url" : "required string of at least 5 characters which includes an http protocol", \n
+    "desc" : "optional, but if included, must be a string of at least 1 character", \n
+    "rating" : "optional, but if included, must be a number between 1 and 5" \n
+} \n
 
 It will then return a json object with the above properties as well as a uniquely generated id for the bookmark which can be used to access the individual bookmark in GET and DELETE requests as follows:
 
