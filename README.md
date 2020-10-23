@@ -2,17 +2,31 @@
 
 This is a bookmark api used for the Thinkful Software Engineering Immersion Program Bookmarks App Project!
 
-## Set up
+## Documentation
 
-Complete the following steps to start the api:
+This api can handle GET, POST, and DELETE requests.
 
-1. Clone this repository to your local machine `git clone https://github.com/alannabouloy/bookmark-api NEW-FILE-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-FILE-NAME instead of `"name": "bookmark-server",`
-7. Make sure to add an API_TOKEN to your .env file
+It stores data into an array of bookmarks that refreshes with the server.
+
+To access all bookmarks stored in data, or to POST a new bookmark, use the following endpoint:
+
+http://localhost:8000/bookmarks
+
+The API will require a Bearer Token which you can set on your personal machine. 
+
+POST requests should be formatted in json with the expected data formatted as follows:
+
+{
+    "title" : "required string of at least 1 character",
+    "url" : "required string of at least 5 characters which includes an http protocol",
+    "desc" : "optional, but if included, must be a string of at least 1 character",
+    "rating" : "optional, but if included, must be a number between 1 and 5"
+}
+
+It will then return a json object with the above properties as well as a uniquely generated id for the bookmark which can be used to access the individual bookmark in GET and DELETE requests as follows:
+
+endpoint -> http://localhost:8000/bookmarks/{id-goes-here}
+
 
 ## Scripts
 
